@@ -1,4 +1,37 @@
-# bookstore
+# Book-Store
+
+## **1. What is this?**
+This is PWA based on NuxtJS the platfrom for Students who willing to sell/purchas the books and stationaries online. 
+
+## **2. What is the Use of this platfrom?**
+On this platfrom students can sell old-new products like books 📕, notes 📰, engineering components 📐, etc. online directly. 
+No need to visit any bookshop or any other place. Can do it from home only.
+
+## **3. What problem does it solve?**
+Currently their no online platfrom for student's to sell/purchas the books and stationaries. 
+So this is the place to sell all this things online. 
+And as considering current situation anyone can sell their things directly online. so it will follow social distancing also😎.
+
+## **4. Who can sell products using this platfrom?**
+Anyone can sell product. The only condition is product is related to educational things(books, components, etc).
+
+## **5. What is the registeration fees?**
+Free to all.
+
+## **6. Requirnmemnts to use this platfrom?**
+any device is supportable.
+
+## **7. How to Use this platfrom?**
+    ### Step 1 
+    Register and make profile on platfrom
+    
+    ### Step 2
+    Click on "Sell Product" to sell product or explore other product to purchase.
+    
+    ### Step 3 
+    For selling product add Product image, Product Name, Description, keywords, Product type(New/Used), Contact Details
+    
+
 
 ## Build Setup
 
@@ -18,5 +51,6 @@ $ yarn generate
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
-# nuxt-book-store
-A pwa based on nuxtJS for selling/purchasing the books and stationaries for college students.
+
+# MAKE IN INDIA INITIATIVE
+
