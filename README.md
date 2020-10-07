@@ -18,3 +18,5 @@ $ yarn generate
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+# nuxt-book-store
+A pwa based on nuxtJS for selling/purchasing the books and stationaries for college students.
