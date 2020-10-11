@@ -5,10 +5,11 @@ This is PWA based on NuxtJS the platfrom for Students who willing to sell/purcha
 
 ## **2. What is the Use of this platfrom?**
 On this platfrom students can sell old-new products like books 📕, notes 📰, engineering components 📐, etc. online directly. 
-No need to visit any bookshop or any other place. Can do it from home only.
+No need to visit any bookshop or any other place. Can do it from home only.which will help to use time efficiently.
 
 ## **3. What problem does it solve?**
-Currently their no online platfrom for student's to sell/purchas the books and stationaries. 
+Currently their no online platfrom for student's to sell/purchas the books and stationaries.Many stationaries are required only for specific duration so it will helpful to use it by another student in efficient price without searching anywhere.
+Also it help to get whole set of books of that particular semester or department.
 So this is the place to sell all this things online. 
 And as considering current situation anyone can sell their things directly online. so it will follow social distancing also😎.
 
