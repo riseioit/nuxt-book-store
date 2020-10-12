@@ -1,0 +1,10 @@
+a,
+a:link,
+a:visited{
+    color: black;
+    transition: color .1s ease-in-out;
+}
+
+a:hover{
+    color: $color-primary;
+}
