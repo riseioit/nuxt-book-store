@@ -1,14 +1,14 @@
 # Book-Store
 
 ## **1. What is this?**
-This is PWA based on NuxtJS the platfrom for Students who willing to sell/purchas the books and stationaries online. 
+This is PWA based on NuxtJS the platfrom for Students willing to sell/purchase the books and stationaries online. 
 
 ## **2. What is the Use of this platfrom?**
-On this platfrom students can sell old-new products like books 📕, notes 📰, engineering components 📐, etc. online directly. 
-No need to visit any bookshop or any other place. Can do it from home only.which will help to use time efficiently.
+On this platfrom students can sell old/new products like books 📕, notes 📰, instruments like drafters which are needed for first year engineering only 📐, etc. online directly. 
+No need to visit any bookshop or other place. Can do it from home only.which will help to use time efficiently.
 
 ## **3. What problem does it solve?**
-Currently their no online platfrom for student's to sell/purchas the books and stationaries.Many stationaries are required only for specific duration so it will helpful to use it by another student in efficient price without searching anywhere.
+Currently there is no online platfrom for student's to sell/purchas the books and stationaries. Many stationaries are required only for specific duration so it will be helpful to use it by another student in efficient price without searching anywhere.
 Also it help to get whole set of books of that particular semester or department.
 So this is the place to sell all this things online. 
 And as considering current situation anyone can sell their things directly online. so it will follow social distancing also😎.
@@ -16,10 +16,10 @@ And as considering current situation anyone can sell their things directly onlin
 ## **4. Who can sell products using this platfrom?**
 Anyone can sell product. The only condition is product is related to educational things(books, components, etc).
 
-## **5. What is the registeration fees?**
+## **5. What are the registration fees?**
 Free to all.
 
-## **6. Requirnmemnts to use this platfrom?**
+## **6. Requirememnts to use this platfrom?**
 any device is supportable.
 
 ## **7. How to Use this platfrom?**
