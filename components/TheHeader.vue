@@ -13,12 +13,63 @@
         <a href="#" class="header__link">notifications</a>
       </li>
       <li class="header__item">
-        <a href="#" class="header__link">My account</a>
+        <a href="#" @click="login" class="header__link">My account</a>
       </li>
-      <li class="header__item"><a href="#" class="header__link">Cart</a></li>
+      <li class="header__item" v-if="user && user.displayName">
+        <a href="#" class="header__link" @click="logout">{{ user.displayName }}</a>
+      </li>
+      <li class="header__item" v-else>
+        <a href="#" class="header__link" @click="login">{{ "login/signup" }}</a>
+      </li>
     </ul>
   </header>
 </template>
+
+<script>
+import { mapMutations, mapActions, mapState } from "vuex";
+export default {
+  computed: {
+    ...mapState("firebase", {
+      user: "authUser"
+    })
+  },
+  methods: {
+    ...mapMutations({
+      setUser: "firebase/SET_USER",
+    }),
+    ...mapActions({
+      cleanUp: "firebase/cleanupAction",
+    }),
+    login() {
+      this.$fireAuth
+        .signInWithPopup(new this.$fireAuthObj.GoogleAuthProvider())
+        .then((res) => {
+          console.log(res.user);
+          const { email, displayName, emailVerified, uid, photoURL } = res.user;
+          this.setUser({
+            email,
+            displayName,
+            emailVerified,
+            uid,
+            photoURL,
+          });
+        })
+        .catch((e) => {
+          console.log(e);
+        });
+    },
+    logout() {
+      this.setUser(null);
+      this.$fireAuth.signOut().then(res => {
+        console.log(res);
+      this.$fireAuthUnsubscribe()
+      }).catch(e => {
+        console.log(e);
+      })
+    },
+  },
+};
+</script>
 
 <style lang="scss" scoped>
 $size: 1.5rem;
@@ -32,11 +83,10 @@ $spacing: 0.345rem;
   display: flex;
   align-items: center;
 
-  &__ip{
-      display: none !important;
-      visibility: hidden;
+  &__ip {
+    display: none !important;
+    visibility: hidden;
   }
-
 
   &__button {
     display: block;
