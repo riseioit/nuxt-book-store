@@ -15,8 +15,8 @@
       <li class="header__item">
         <a href="#" @click="login" class="header__link">My account</a>
       </li>
-      <li class="header__item" v-if="user">
-        <a href="#" class="header__link" @click="cleanUp">{{ user }}</a>
+      <li class="header__item" v-if="user && user.displayName">
+        <a href="#" class="header__link" @click="logout">{{ user.displayName }}</a>
       </li>
       <li class="header__item" v-else>
         <a href="#" class="header__link" @click="login">{{ "login/signup" }}</a>
@@ -26,22 +26,12 @@
 </template>
 
 <script>
-import { mapMutations, mapActions } from "vuex";
+import { mapMutations, mapActions, mapState } from "vuex";
 export default {
-  data() {
-    return {
-      user: {},
-    };
-  },
-  created() {
-    user: this.$store.state.firebase.authUser
-      ? this.$store.state.firebase.authUser.displayName
-      : null;
-  },
-  watch: {
-    user: (val) => {
-      console.log(val);
-    },
+  computed: {
+    ...mapState("firebase", {
+      user: "authUser"
+    })
   },
   methods: {
     ...mapMutations({
@@ -70,6 +60,12 @@ export default {
     },
     logout() {
       this.setUser(null);
+      this.$fireAuth.signOut().then(res => {
+        console.log(res);
+      this.$fireAuthUnsubscribe()
+      }).catch(e => {
+        console.log(e);
+      })
     },
   },
 };

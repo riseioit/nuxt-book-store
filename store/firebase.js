@@ -11,7 +11,6 @@ export const actions = {
         if (!authUser) {
         //   await dispatch('cleanupAction')
         commit('DEL_USER')
-      
           return
         }
       
@@ -25,7 +24,7 @@ export const actions = {
           displayName,
           photoURL, // results in photoURL being undefined for server auth
           // use custom claims to control access (see https://firebase.google.com/docs/auth/admin/custom-claims)
-          isAdmin: claims.custom_claim
+        //   isAdmin: claims.custom_claim
         })
       }
 }
@@ -33,8 +32,10 @@ export const actions = {
 export const mutations = {
     ON_AUTH_STATE_CHANGED_MUTATION(state, { authUser, claims }) {
         // you can request additional fields if they are optional (e.g. photoURL)
+        if (!authUser) {
+            return
+        }
         const { uid, email, emailVerified, displayName, photoURL } = authUser
-        
         state.authUser = {
           uid: uid || null,
           displayName: displayName || null,
