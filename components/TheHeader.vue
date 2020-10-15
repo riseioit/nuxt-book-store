@@ -10,13 +10,23 @@
     </nuxt-link>
     <ul class="header__menu">
       <li class="header__item">
-        <a href="#" class="header__link">notifications</a>
+        <a href="#" class="header__link"
+          >cart <span>{{ this.$store.getters.itemCount }}</span></a
+        >
       </li>
-      <li class="header__item">
-        <a href="#" @click="login" class="header__link">My account</a>
+      <li class="header__item header__item--rel">
+        <a href="#" class="header__link">More</a>
+        <sub-menu class="header__sub" :links="more"></sub-menu>
       </li>
-      <li class="header__item" v-if="user && user.displayName">
-        <a href="#" class="header__link" @click="logout">{{ user.displayName }}</a>
+
+      <li
+        class="header__item header__item--rel"
+        v-if="user && user.displayName"
+      >
+        <a href="#" class="header__link">{{ user.displayName }}</a>
+        <client-only>
+          <sub-menu class="header__sub" :links="settings"></sub-menu>
+        </client-only>
       </li>
       <li class="header__item" v-else>
         <a href="#" class="header__link" @click="login">{{ "login/signup" }}</a>
@@ -30,8 +40,36 @@ import { mapMutations, mapActions, mapState } from "vuex";
 export default {
   computed: {
     ...mapState("firebase", {
-      user: "authUser"
-    })
+      user: "authUser",
+    }),
+  },
+  data() {
+    return {
+      more: [
+        {
+          item: "advertise",
+          link: "link",
+        },
+        {
+          item: "sell you products",
+          link: "sell",
+        },
+      ],
+      settings: [
+        {
+          item: "profile",
+          link: "profile",
+        },
+        {
+          item: "my orders",
+          link: "orders",
+        },
+        {
+          item: "logout",
+          link: this.logout,
+        },
+      ],
+    };
   },
   methods: {
     ...mapMutations({
@@ -60,12 +98,15 @@ export default {
     },
     logout() {
       this.setUser(null);
-      this.$fireAuth.signOut().then(res => {
-        console.log(res);
-      this.$fireAuthUnsubscribe()
-      }).catch(e => {
-        console.log(e);
-      })
+      this.$fireAuth
+        .signOut()
+        .then((res) => {
+          console.log(res);
+          this.$fireAuthUnsubscribe();
+        })
+        .catch((e) => {
+          console.log(e);
+        });
     },
   },
 };
@@ -135,6 +176,16 @@ $spacing: 0.345rem;
 
   &__item {
     padding: 0.5rem 0.25rem;
+
+    &--rel {
+      position: relative;
+      &:hover > ul {
+        padding: 0;
+        display: block;
+        opacity: 1;
+        max-height: 500px;
+      }
+    }
   }
 
   a.header__link {
@@ -148,6 +199,19 @@ $spacing: 0.345rem;
       background-color: #fff;
       color: $color-primary;
     }
+  }
+
+  &__sub {
+    transition: all 0.3s ease-in-out;
+    display: block;
+    // opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 99;
   }
 }
 </style>
