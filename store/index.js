@@ -7,3 +7,19 @@ async nuxtServerInit({ commit }, { res }) {
     }
   }
 }
+
+export const state = () => ({
+  products: []
+})
+
+export const mutations = {
+  ADD_TO_CART(state, product){
+    state.products.push(product);
+  }
+}
+
+export const getters = {
+  itemCount(state) {
+    return state.products.length
+  }
+}
