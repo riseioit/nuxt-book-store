@@ -14,7 +14,7 @@
     "@nuxtjs/pwa": "^3.2.2",
     "@nuxtjs/style-resources": "^1.0.0",
     "core-js": "^3.6.5",
-    "firebase": "^7.23.0",
+    "firebase": "^7.24.0",
     "node-sass": "^4.14.1",
     "nuxt": "^2.14.6",
     "sass-loader": "^10.0.3",
