@@ -17,7 +17,7 @@
     "firebase": "^7.23.0",
     "node-sass": "^4.14.1",
     "nuxt": "^2.14.6",
-    "sass-loader": "^10.0.3",
+    "sass-loader": "^10.0.5",
     "vuex-persistedstate": "^4.0.0-beta.1"
   },
   "devDependencies": {}
